@@ -1,0 +1,12 @@
+<%- if login? -%>
+      <a href="<%= url_for(:controller => 'togodb', :action => 'index') %>"><img src="/images/togodb/bt_red.jpg" alt="Database" width="70" height="56" border="0" onMouseOver="this.src='/images/togodb/bo_red.jpg'" onMouseOut="this.src='/images/togodb/bt_red.jpg'"></a>
+<%- end -%>
+<%- if roled?(:import_table) -%>
+      <a href="<%= url_for(:controller => 'togodb_import', :action => 'name') %>"><img src="/images/togodb/bt_yellow.jpg" alt="Import" width="70" height="56" border="0" onMouseOver="this.src='/images/togodb/bo_yellow.jpg'" onMouseOut="this.src='/images/togodb/bt_yellow.jpg'"></a>
+<%- end -%>
+<%- if roled?(:superuser) -%>
+      <a href="<%= url_for(:controller => 'togodb', :action => 'scan') %>"><img src="/images/togodb/bt_green.jpg" alt="Scan" width="70" height="56" border="0" onMouseOver="this.src='/images/togodb/bo_green.jpg'" onMouseOut="this.src='/images/togodb/bt_green.jpg'"></a>
+<%- end -%>
+<%- if roled?(:superuser) -%>
+      <a href="<%= url_for(:controller => 'togodb_user') %>"><img src="/images/togodb/bt_blue.jpg" alt="UserManager" width="70" height="56" border="0" onMouseOver="this.src='/images/togodb/bo_blue.jpg'" onMouseOut="this.src='/images/togodb/bt_blue.jpg'"></a>
+<%- end -%>
