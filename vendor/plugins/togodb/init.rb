@@ -1,6 +1,7 @@
 # Make sure that ActiveScaffold has already been included
 ActiveScaffold rescue throw "should have included ActiveScaffold plugin first"
 
+directory = File.dirname(__FILE__)
 config.controller_paths << directory + "/lib"
 
 # Load

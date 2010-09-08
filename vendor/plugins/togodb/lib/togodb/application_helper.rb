@@ -45,7 +45,7 @@ module Togodb::ApplicationHelper
 
               when :has_many, :has_and_belongs_to_many
                 firsts = value.first(4).collect { |v| v.to_label }
-                firsts[3] = '…' if firsts.length == 4
+                firsts[3] = '...' if firsts.length == 4
                 formatted_value = clean_column_value(format_column(firsts.join(', ')))
             end
           end
@@ -316,11 +316,11 @@ module Togodb::ApplicationHelper
   def togodb_metadata_yes_no_cloud(value)
     case value
     when 1
-      '○'
+      'o'
     when 0
-      '×'
+      'x'
     when -1
-      '不明'
+      'unknown'
     end
   end
 end
